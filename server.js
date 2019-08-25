@@ -30,16 +30,7 @@ const db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadLines";
 
 // Connect mongoose to the database
 mongoose.connect(db, {useNewUrlParser: true});
-// mongoose.connect(db, function(error) {
-//     // Log any errors connecting with mongoose
-//     if(error) {
-//         console.log(error);
-//     }
-//     // Or log a success message
-//     else {
-//         console.log("mongoose connection is successful");
-//     }
-// });
+
 
 // Listen on the port
 app.listen(PORT, function() {
@@ -47,10 +38,6 @@ app.listen(PORT, function() {
 });
 
 
-
-
-
-// const mongoose = require("mongoose");
 
 // // Scraping tools
 // const axios = require("axios");
