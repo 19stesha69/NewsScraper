@@ -11,6 +11,9 @@ const app = express();
 // Express Router
 const router = express.Router();
 
+// Require our routes file pass our router object
+require("./config/routes")(router);
+
 /*To serve static files such as images, CSS files, 
 and JavaScript files, use the express.static built-in 
 middleware function in Express.*/
@@ -29,7 +32,14 @@ app.use(router);
 const db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadLines";
 
 // Connect mongoose to the database
-mongoose.connect(db, {useNewUrlParser: true});
+mongoose.connect(db, {useNewUrlParser: true}, function(error) {
+    if(error) {
+        console.log(error);
+    }
+    else {
+        console.log("mongoose connection is successful");
+    }
+});
 
 
 // Listen on the port
