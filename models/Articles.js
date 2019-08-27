@@ -5,15 +5,15 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create a new schema called headLineSchema
-var headlineSchema = new Schema ({
-    headline: {
+var articleSchema = new Schema ({
+    category: {
         type: String,
         required: true,
         /*unique requires the headline be unique so the same 
         article doesn't get scraped more than once*/
         unique: true
     },
-    summary: {
+    fullTitle: {
         type: String,
         required: true
     },
@@ -24,7 +24,7 @@ var headlineSchema = new Schema ({
     }
 });
 
-var Headline = mongoose.model("Headline", headlineSchema);
+var Article = mongoose.model("Article", articleSchema);
 
-module.exports = Headline;
+module.exports = Article;
 
