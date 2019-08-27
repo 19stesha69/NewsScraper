@@ -6,9 +6,9 @@ const Schema = mongoose.Schema;
 
 // Create a new schema called noteSchema
 var noteSchema = new Schema ({
-    _headlineId: {
+    _categoryId: {
         type: Schema.Types.ObjectId,
-        ref: "Headline"
+        ref: "Category"
     },
     date: String,
     noteText: String
