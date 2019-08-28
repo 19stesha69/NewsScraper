@@ -6,7 +6,7 @@ const makeDate = require("../scripts/date");
 const Articles = require("../models/Articles");
 
 // This modules.exports contains all of the functionallity related to the Articles
-modules.exports = {
+module.exports = {
     // fetch scrapes the website to collect articles and deposits them in the mongo database
     fetch: function(cb) {
         scrape(function(data) {
