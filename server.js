@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const expressHandlebars = require("express-handlebars");
+const bodyParser = require("body-parser");
 
 // assigning PORT to the host's designated port OR 3000
 const PORT = process.env.PORT || 3000;
@@ -18,6 +19,11 @@ require("./config/routes")(router);
 and JavaScript files, use the express.static built-in 
 middleware function in Express.*/
 app.use(express.static(__dirname + "/public"));
+
+// Use bodyParser in app
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 // Connect Handlebars to Express app
 app.engine("handlebars", expressHandlebars({
